@@ -14,8 +14,13 @@ A Python-based automation tool that bridges on-screen content with any AI LLM of
 4. **Loop:** The program automatically repeats - it sends the next screenshot to the AI for further interaction.
 
 
+## 🛠️ Setup
 
-## 🛠️ Requirements
+1. COMING SOON - If you know what you're doing, read the script to set up
+
+
+
+## ✅ Requirements
 
 * Python 3.x
 
