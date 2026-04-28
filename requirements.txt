@@ -1,0 +1,5 @@
+pyautogui
+Pillow
+pyperclip
+keyboard
+copykitten
