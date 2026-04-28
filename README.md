@@ -49,6 +49,8 @@ This project is licensed under the GNU GPLv3.
 
 
 ⚠️ Disclose Source
+
 ⚠️ Include License Notice
+
 ⚠️ Apply Same License to Derivatives
 
