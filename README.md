@@ -35,12 +35,18 @@ AI can misbehave, so it is best to keep watch - if you find that it starts doing
 This project is licensed under the GNU GPLv3.
 
 ✅ Commercial Use
+
 ✅ Modification
+
 ✅ Distribution
 
+
 ❌ Closed Source Distribution
+
 ❌ Changing the License
+
 ❌ Holding Authors Liable
+
 
 ⚠️ Disclose Source
 ⚠️ Include License Notice
