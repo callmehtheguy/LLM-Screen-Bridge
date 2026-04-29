@@ -3,6 +3,9 @@
 A Python-based automation tool that bridges on-screen content with any AI LLM of your choice. It captures a specific region of the screen defined by UI markers (that you choose) and sends the data to an LLM for task solving and interaction.
 
 
+It is currently able to solve obvious tasks if there are on=screen instructions. Functionality for you to customise what the task is will be added in the future.
+
+
 ## ℹ️ How it Works
 
 1. **Calibration:** You move your mouse to locations of your choice to define the capture area - this is the area that the AI will be limited to.
