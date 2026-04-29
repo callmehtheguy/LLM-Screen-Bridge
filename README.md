@@ -7,7 +7,7 @@ A Python-based automation tool that bridges on-screen content with any AI LLM of
 
 1. **Detection:** Locates `top_element.png` (top left anchor) and `bottom_element.png` (bottom right anchor) to define the capture area.
 
-2. **Analysis:** Captures the screen and sends it to the AI for screen analysis and interaction.
+2. **Analysis:** Captures the screen and sends it to the AI for screen analysis and interaction. Compatible with almost all LLMs.
 
 3. **Execution:** The AI returns click coordinates, which the script executes automatically.
 
@@ -30,9 +30,9 @@ A Python-based automation tool that bridges on-screen content with any AI LLM of
 
 ## ⚠️ Safety Features
 
-AI can misbehave, so it is best to keep watch - if you find that it starts doing things you don't want it to, you can hold the `ESC` key at any time to kill the script.
+* AI can misbehave, so it is best to keep watch - if you find that it starts doing things you don't want it to, you can hold the `ESC` key at any time to kill the script.
 
-*This tool automates mouse and keyboard inputs. Use at your own risk. The author is not responsible for any damage, account bans, or unintended actions taken by the AI. Always keep your hand near the Esc key.
+* This tool automates mouse and keyboard inputs. Use at your own risk. The author is not responsible for any damage caused by actions taken by any AI.
 
 
 ## 📜 License
