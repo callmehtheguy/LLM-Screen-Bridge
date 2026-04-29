@@ -20,17 +20,17 @@ ASSETS = {
 }
 
 DELAYS = {
-    "PASTE": 1.5,
-    "TAB_SWITCH": 1.0,
-    "CLICK_SEQUENCE": 0.4,
-    "LOOP_COOLDOWN": 2.0,
-    "POST_SEND_PAUSE": 2.0,
+    "PASTE": 0.5,
+    "TAB_SWITCH": 0.1,
+    "CLICK_SEQUENCE": 0.1,
+    "LOOP_COOLDOWN": 1.0,
+    "POST_SEND_PAUSE": 1.5,
 }
 
 DO_NOT_TOUCH = {
     "FAILSAFE": True,
-    "SCROLL_ATTEMPTS": 15,
-    "SCROLL_AMOUNT": -400,
+    "SCROLL_ATTEMPTS": 152,
+    "SCROLL_AMOUNT": -500,
     "DPI_AWARE": True,
     "VERIFY_SEND": 0.8,
     "CLIPBOARD_SYNC": 0.3,
