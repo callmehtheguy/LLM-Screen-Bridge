@@ -20,8 +20,6 @@ SCREEN_REGION = {
 }
 
 ASSETS = {
-    "TOP_MARKER": 'top_element.png',
-    "BOTTOM_MARKER": 'bottom_element.png',
     "INPUT_BAR": 'ask_ai.png',
     "COPY_BTN": 'copy_text_button.png',
 }
@@ -66,13 +64,13 @@ if DO_NOT_TOUCH["DPI_AWARE"]:
 try: 
     import copykitten 
 except ImportError: 
-    print("Error: pip install copykitten")
+    print("[!] Copykitten not installed")
 
 pyautogui.FAILSAFE = DO_NOT_TOUCH["FAILSAFE"]
 
 def check_quit():
     if keyboard.is_pressed(DO_NOT_TOUCH["EMERGENCY_KEY"]):
-        print(f"\n[STOP] Emergency key '{DO_NOT_TOUCH['EMERGENCY_KEY']}' detected. Exiting...")
+        print(f"\n[i] '{DO_NOT_TOUCH['EMERGENCY_KEY']}' detected; program terminated.")
         exit()
 
 def find_ui(img):
@@ -97,10 +95,10 @@ def smart_find_copy_button(bar_pos):
     pyautogui.moveTo(target_x, target_y)
     for i in range(DO_NOT_TOUCH["SCROLL_ATTEMPTS"]):
         check_quit()
+        pyautogui.scroll(DO_NOT_TOUCH["SCROLL_AMOUNT"]) 
         btn = find_ui(ASSETS["COPY_BTN"])
         if btn:
             return btn
-        pyautogui.scroll(DO_NOT_TOUCH["SCROLL_AMOUNT"]) 
         time.sleep(DO_NOT_TOUCH["SCROLL_PAUSE"])
     return None
 
@@ -147,31 +145,29 @@ def ai_talk(bar, prompt, paste_image=False, copy_result=False):
 
 def calibrate_region():
     print("--- CALIBRATION ---")
-    print("Hover TOP-LEFT and press SHIFT")
+    print("[!] Hover to top-left and press SHIFT")
     while not keyboard.is_pressed('shift'):
         time.sleep(0.1)
     p1 = pyautogui.position()
-    print(f"Top-Left Set: {p1}")
     while keyboard.is_pressed('shift'): time.sleep(0.1)
     time.sleep(0.5)
 
-    print("Hover BOTTOM-RIGHT and press SHIFT")
+    print("[!] Hover to bottom-right and press SHIFT")
     while not keyboard.is_pressed('shift'):
         time.sleep(0.1)
     p2 = pyautogui.position()
-    print(f"Bottom-Right Set: {p2}")
     while keyboard.is_pressed('shift'): time.sleep(0.1)
 
     SCREEN_REGION["LEFT"] = min(p1.x, p2.x)
     SCREEN_REGION["TOP"] = min(p1.y, p2.y)
     SCREEN_REGION["WIDTH"] = abs(p2.x - p1.x)
     SCREEN_REGION["HEIGHT"] = abs(p2.y - p1.y)
-    print(f"Region Locked: {SCREEN_REGION}")
+    print(f"[i] Screen Region: {SCREEN_REGION}")
     time.sleep(1)
 
 def run_automation():
-    print(f"--- SYSTEM ACTIVE ---")
-    print(f"Emergency Stop: Hold '{DO_NOT_TOUCH['EMERGENCY_KEY'].upper()}'")
+    print(f"--- AUTOMATION ACTIVE ---")
+    print(f"[!] To stop, hold '{DO_NOT_TOUCH['EMERGENCY_KEY'].upper()}'")
     
     lx = SCREEN_REGION["LEFT"]
     ty = SCREEN_REGION["TOP"]
