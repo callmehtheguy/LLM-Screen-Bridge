@@ -12,6 +12,13 @@ SETTINGS = {
     "WRITE_INTERVAL": 0.01,
 }
 
+SCREEN_REGION = {
+    "LEFT": 0,
+    "TOP": 0,
+    "WIDTH": 0,
+    "HEIGHT": 0,
+}
+
 ASSETS = {
     "TOP_MARKER": 'top_element.png',
     "BOTTOM_MARKER": 'bottom_element.png',
@@ -47,7 +54,6 @@ DO_NOT_TOUCH = {
     }
 }
 
-# --- DPI Awareness ---
 if DO_NOT_TOUCH["DPI_AWARE"]:
     try:
         ctypes.windll.shcore.SetProcessDpiAwareness(1)
@@ -101,14 +107,16 @@ def smart_find_copy_button(bar_pos):
 def ai_talk(bar, prompt, paste_image=False, copy_result=False):
     check_quit()
     pyautogui.click(bar)
+    time.sleep(0.2)
     
     if paste_image:
         pyautogui.hotkey('ctrl', 'v')
         time.sleep(DELAYS["PASTE"])
     
     pyperclip.copy(prompt)
-    time.sleep(0.1)
+    time.sleep(0.2)
     pyautogui.hotkey('ctrl', 'v')
+    time.sleep(0.1)
     pyautogui.press('enter')
     
     for attempt in range(DO_NOT_TOUCH["MAX_SEND_RETRIES"]):
@@ -137,21 +145,38 @@ def ai_talk(bar, prompt, paste_image=False, copy_result=False):
     
     return ""
 
+def calibrate_region():
+    print("--- CALIBRATION ---")
+    print("Hover TOP-LEFT and press SHIFT")
+    while not keyboard.is_pressed('shift'):
+        time.sleep(0.1)
+    p1 = pyautogui.position()
+    print(f"Top-Left Set: {p1}")
+    while keyboard.is_pressed('shift'): time.sleep(0.1)
+    time.sleep(0.5)
+
+    print("Hover BOTTOM-RIGHT and press SHIFT")
+    while not keyboard.is_pressed('shift'):
+        time.sleep(0.1)
+    p2 = pyautogui.position()
+    print(f"Bottom-Right Set: {p2}")
+    while keyboard.is_pressed('shift'): time.sleep(0.1)
+
+    SCREEN_REGION["LEFT"] = min(p1.x, p2.x)
+    SCREEN_REGION["TOP"] = min(p1.y, p2.y)
+    SCREEN_REGION["WIDTH"] = abs(p2.x - p1.x)
+    SCREEN_REGION["HEIGHT"] = abs(p2.y - p1.y)
+    print(f"Region Locked: {SCREEN_REGION}")
+    time.sleep(1)
+
 def run_automation():
     print(f"--- SYSTEM ACTIVE ---")
     print(f"Emergency Stop: Hold '{DO_NOT_TOUCH['EMERGENCY_KEY'].upper()}'")
     
-    lx, ty, w, h = 0, 0, 0, 0
-    while True:
-        check_quit()
-        t1 = find_ui(ASSETS["TOP_MARKER"])
-        b1 = find_ui(ASSETS["BOTTOM_MARKER"])
-        if t1 and b1:
-            lx, ty = int(t1.left), int(t1.top)
-            w = int(max(t1.width, b1.width, b1.left + b1.width - t1.left))
-            h = int((b1.top + b1.height) - t1.top)
-            break
-        time.sleep(1)
+    lx = SCREEN_REGION["LEFT"]
+    ty = SCREEN_REGION["TOP"]
+    w = SCREEN_REGION["WIDTH"]
+    h = SCREEN_REGION["HEIGHT"]
 
     while True:
         check_quit()
@@ -190,4 +215,5 @@ def run_automation():
             time.sleep(DELAYS["LOOP_COOLDOWN"])
 
 if __name__ == "__main__":
+    calibrate_region()
     run_automation()
