@@ -5,7 +5,7 @@ A Python-based automation tool that bridges on-screen content with any AI LLM of
 
 ## ℹ️ How it Works
 
-1. **Detection:** Locates `top_element.png` (top left anchor) and `bottom_element.png` (bottom right anchor) to define the capture area.
+1. **Calibration:** You move your mouse to locations of your choice to define the capture area - this is the area that the AI will be limited to.
 
 2. **Analysis:** Captures the screen and sends it to the AI for screen analysis and interaction. Compatible with almost all LLMs.
 
