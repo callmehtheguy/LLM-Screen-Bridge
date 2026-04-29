@@ -16,8 +16,27 @@ A Python-based automation tool that bridges on-screen content with any AI LLM of
 
 ## 🛠️ Setup
 
-1. COMING SOON - If you know what you're doing, read the script to set up
+1. **Install the program:** Head to https://download-directory.github.io/ to install the files. Extract them.
 
+
+2. **Prepare Images:** Prepare the following images and name them the following:
+
+
+   `ask_ai.png` - The placeholder text for the textbox in a conversation with the AI of your choosing.
+   <img width="240" height="242" alt="image" src="https://github.com/user-attachments/assets/dffaf65a-b6e0-4947-a510-813ea908a2ee" />
+
+
+   `copy_text_button.png` - The "Copy text" button
+   <img width="329" height="378" alt="image" src="https://github.com/user-attachments/assets/f2e70066-0a24-4619-b3a0-1869d579626f" />
+
+
+3. **Install required libraries:** Run `pip install -r requirements.txt` in the command prompt.
+  
+
+4. **Run the .py script:** Run the script and follow the instructions within the script.
+
+
+Need help? Discord @callmehtheguy; Gmail callmehtheguy@gmail.com
 
 
 ## ✅ Requirements
