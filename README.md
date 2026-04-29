@@ -19,7 +19,7 @@ It is currently able to solve obvious tasks if there are on-screen instructions.
 
 ## 🛠️ Setup Instructions
 
-1. **Install the program:** Head to https://download-directory.github.io/ to install the files. Extract them.
+1. **Install the program:** Head to https://download-directory.github.io/ to install the files from this repository. Extract them from the compressed folder.
 
 
 2. **Prepare Images:** Prepare the following images and name them the following:
