@@ -28,7 +28,7 @@ A Python-based automation tool that bridges on-screen content with any AI LLM of
 
 
 
-## ⚠️ Safety Features
+## ⚠️ Safety Information
 
 * AI can misbehave, so it is best to keep watch - if you find that it starts doing things you don't want it to, you can hold the `ESC` key at any time to kill the script.
 
