@@ -1,6 +1,11 @@
 # LLM-Screen-Bridge
+Currently only supports Windows due to Python library limitations.
+
 
 A Python-based automation tool that bridges on-screen content with any AI LLM of your choice. It captures a specific region of the screen defined by UI markers (that you choose) and sends the data to an LLM for task solving and interaction.
+
+
+It is currently able to solve obvious tasks if there are on-screen instructions. Functionality for you to customise what the task is will be added in the future.
 
 
 ## ℹ️ How it Works
@@ -16,7 +21,7 @@ A Python-based automation tool that bridges on-screen content with any AI LLM of
 
 ## 🛠️ Setup Instructions
 
-1. **Install the program:** Head to https://download-directory.github.io/ to install the files. Extract them.
+1. **Install the program:** Head to https://download-directory.github.io/ to install the files from this repository. Extract them from the compressed folder.
 
 
 2. **Prepare Images:** Prepare the following images and name them the following:
@@ -43,13 +48,15 @@ Need help? Discord @callmehtheguy; Gmail callmehtheguy@gmail.com
 
 * Python 3.x
 
-* Required libraries: `pip install -r requirements.txt`
+* Required libraries - check `requirements.txt`
 
 
 
 ## ⚠️ Safety Information
 
-* AI can misbehave, so it is best to keep watch - if you find that it starts doing things you don't want it to, you can hold the `ESC` key at any time to kill the script.
+* This tool **will** give AI control to your mouse input. (within an area you select)
+
+* AI can misbehave, so it is best to keep an eye while the program is running - if you find that it starts doing things you don't want it to, you can hold the `ESC` key at any time to kill the script.
 
 * This tool automates mouse and keyboard inputs. Use at your own risk. The author is not responsible for any damage caused by actions taken by any AI.
 
