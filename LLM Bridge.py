@@ -35,7 +35,7 @@ DELAYS = {
 DO_NOT_TOUCH = {
     "FAILSAFE": True,
     "SCROLL_ATTEMPTS": 152,
-    "SCROLL_AMOUNT": -500,
+    "SCROLL_AMOUNT": -400,
     "DPI_AWARE": True,
     "VERIFY_SEND": 0.8,
     "CLIPBOARD_SYNC": 0.3,
@@ -43,9 +43,9 @@ DO_NOT_TOUCH = {
     "EMERGENCY_KEY": 'esc',
     "MAX_SEND_RETRIES": 1000,
     "PROMPTS": {
-        "STEP_1_MAP": "Send an exact replica of what the screenshot says in your own format - text, table, etc. Also map out every button, number, and text area. List contents and 0-1000 coordinates.",
+        "STEP_1_MAP": "Send an exact replica of what the screenshot says in your own format - text, table, etc. Also map out every button, number, and text area. List contents and 0-1000 coordinates. If this is a problem/question that needs to be anwered, show full working and thought process after the mappings. Do not round mid calculation, do not get anything wrong. I'm a bit picky, for example bearings have to be 3 digits, and costs have cant be £1.3 they have to be £1.30. If there is no visible way to input an answer, try clicking on something saying 'enter number' or similar. If this is the case, only click on ONE of those buttons, if you click on multiple, it will not work. Think about what buttons you'll have to click. If absolutely necessary (for example, something that tests your memory), use information from earlier messages in this conversation.",
         "STEP_2_SOLVE": (
-            "Based on the mapping, solve the task. ONLY CLICK ON BUTTONS VISIBLE IN THE SCREENSHOT. If you need to see what it looks like after you click something, only click parts you are certain. You will get the next screenshot after. If it involves a dropdown/multi-step question (one with parts A and B), you are only allowed one click."
+            "Based on the mapping, solve the task. ONLY CLICK ON BUTTONS VISIBLE IN THE SCREENSHOT. If you need to see what it looks like after you click something, only click parts you are certain. You will get the next screenshot after. If it involves a dropdown/multi-step question (one with parts A and B), you are only allowed one click. If there is a numpad visible, enter the entire string of numbers in one go."
             "Return ONLY: CLICK_LIST: [[x1, y1], [x2, y2]] (0-1000 scale). "
             "NO EXPLANATION."
         ),
