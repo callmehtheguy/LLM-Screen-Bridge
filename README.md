@@ -1,4 +1,6 @@
 # LLM-Screen-Bridge
+Currently only supports Windows due to Python library limitations.
+
 
 A Python-based automation tool that bridges on-screen content with any AI LLM of your choice. It captures a specific region of the screen defined by UI markers (that you choose) and sends the data to an LLM for task solving and interaction.
 
