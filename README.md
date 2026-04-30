@@ -54,6 +54,8 @@ Need help? Discord @callmehtheguy; Gmail callmehtheguy@gmail.com
 
 ## ⚠️ Safety Information
 
+* This tool **will** give AI control to your mouse input. (within an area you select)
+
 * AI can misbehave, so it is best to keep an eye while the program is running - if you find that it starts doing things you don't want it to, you can hold the `ESC` key at any time to kill the script.
 
 * This tool automates mouse and keyboard inputs. Use at your own risk. The author is not responsible for any damage caused by actions taken by any AI.
