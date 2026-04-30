@@ -48,13 +48,13 @@ Need help? Discord @callmehtheguy; Gmail callmehtheguy@gmail.com
 
 * Python 3.x
 
-* Required libraries: `pip install -r requirements.txt`
+* Required libraries - check `requirements.txt`
 
 
 
 ## ⚠️ Safety Information
 
-* AI can misbehave, so it is best to keep watch - if you find that it starts doing things you don't want it to, you can hold the `ESC` key at any time to kill the script.
+* AI can misbehave, so it is best to keep an eye while the program is running - if you find that it starts doing things you don't want it to, you can hold the `ESC` key at any time to kill the script.
 
 * This tool automates mouse and keyboard inputs. Use at your own risk. The author is not responsible for any damage caused by actions taken by any AI.
 
